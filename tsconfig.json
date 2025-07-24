@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "files": [],
+  "references": [
+    { "path": "compiler" },
+    { "path": "runtime" },
+    { "path": "cli" },
+    { "path": "examples/todo-list" }
+  ]
+}

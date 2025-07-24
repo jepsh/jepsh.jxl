@@ -1,0 +1,13 @@
+{
+  "name": "todo-list",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "jepsh dev",
+    "build": "jepsh build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@jepsh/runtime": "^0.0.1"
+  }
+}

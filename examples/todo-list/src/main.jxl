@@ -1,0 +1,13 @@
+view App {
+  signal count: Int = 0
+
+  render {
+    VStack {
+      Text("Welcome to Jepsh!")
+      Text("Count: \(count)")
+      Button("Increment") {
+        count += 1
+      }
+    }
+  }
+}

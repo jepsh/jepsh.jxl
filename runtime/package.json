@@ -1,0 +1,43 @@
+{
+  "name": "@jepsh/runtime",
+  "description": "Jepsh Runtime",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "author": "Jepsh Team <hi@jepsh.dev>",
+  "homepage": "https://jepsh.dev",
+  "keywords": [
+    "jepsh",
+    "framework",
+    "runtime"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jepsh/jepsh.git",
+    "directory": "runtime"
+  },
+  "bugs": {
+    "url": "https://github.com/jepsh/jepsh/issues"
+  },
+  "dependencies": {
+    "@jepsh/compiler": "^0.0.1"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "test": "vitest run",
+    "test:cov": "vitest --coverage",
+    "build:pkg": "tsup src/index.ts --format cjs,esm --dts --tsconfig tsconfig.build.json",
+    "build": "npm run clean && npm run build:pkg",
+    "pack": "npm run build:pkg"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "@jepsh/cli",
+  "description": "Jepsh CLI",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "author": "Jepsh Team <hi@jepsh.dev>",
+  "homepage": "https://jepsh.dev",
+  "keywords": [
+    "jepsh",
+    "framework",
+    "cli"
+  ],
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "jepsh": "./dist/index.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jepsh/jepsh.git",
+    "directory": "cli"
+  },
+  "bugs": {
+    "url": "https://github.com/jepsh/jepsh/issues"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "test": "vitest run",
+    "test:cov": "vitest --coverage",
+    "build:pkg": "tsup src/index.ts --format esm --dts --tsconfig tsconfig.build.json",
+    "build": "npm run clean && npm run build:pkg",
+    "pack": "npm run build:pkg"
+  },
+  "dependencies": {
+    "@jepsh/compiler": "^0.0.1",
+    "chalk": "^5.4.1",
+    "commander": "^14.0.0",
+    "fs-extra": "^11.3.0",
+    "vite": "^7.0.6",
+    "vite-plugin-inspect": "^11.3.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^24.1.0"
+  }
+}

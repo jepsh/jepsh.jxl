@@ -1,0 +1,37 @@
+{
+  "name": "jepsh-project",
+  "description": "Jepsh: Performance by Default.",
+  "version": "0.0.1",
+  "private": true,
+  "license": "Apache-2.0",
+  "author": "Jepsh Team <hi@jepsh.dev>",
+  "homepage": "https://jepsh.dev",
+  "workspaces": [
+    "compiler",
+    "runtime",
+    "cli",
+    "examples/todo-list"
+  ],
+  "scripts": {
+    "strap": "npm i --workspaces",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "clean": "npm run clean --workspaces",
+    "clean:all": "npm run clean && rm package-lock.json -rf node_modules",
+    "restrap": "npm clean:all && npm run strap",
+    "test": "npm run test --workspaces",
+    "test:cov": "npm run test:cov --workspaces",
+    "build": "npm run build --workspaces",
+    "pack": "npm run pack --workspaces"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=20.x",
+    "npm": ">=10.x"
+  }
+}

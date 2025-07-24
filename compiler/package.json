@@ -1,0 +1,44 @@
+{
+  "name": "@jepsh/compiler",
+  "description": "Jepsh Compiler",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "author": "Jepsh Team <hi@jepsh.dev>",
+  "homepage": "https://jepsh.dev",
+  "keywords": [
+    "jepsh",
+    "framework",
+    "compiler"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jepsh/jepsh.git",
+    "directory": "compiler"
+  },
+  "bugs": {
+    "url": "https://github.com/jepsh/jepsh/issues"
+  },
+  "scripts": {
+    "clean": "rm -rf dist src/parser/generated",
+    "test": "vitest run",
+    "test:cov": "vitest --coverage",
+    "build:peg": "peggy --format es src/parser/jxl.grammar.pegjs -o src/parser/generated/jxl.parser.js",
+    "build:pkg": "tsup src/index.ts --format cjs,esm --dts --tsconfig tsconfig.build.json",
+    "build": "npm run clean && npm run build:peg && npm run build:pkg",
+    "pack": "npm run build:peg && npm run build:pkg"
+  },
+  "devDependencies": {
+    "peggy": "^5.0.5"
+  }
+}
